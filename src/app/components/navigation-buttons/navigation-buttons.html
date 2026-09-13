@@ -1,16 +1,19 @@
-<button (click)="formService.changeMonthly()">Change</button>
-<p>{{formService.monthly() ? 'month' : 'year'}}</p>
 
 
-@if (formService.currentStep() > 0) {
-  <button (click)="formService.prevStep()">Back</button>
-}
-@if (formService.currentStep() < 3) {
-  <button (click)="formService.nextStep()">Next</button>
 
-}
+ @if (!formService.currentPath('thank-you')) {
+   <div class="container">
+     @if (formService.currentStep() > 0) {
+       <button (click)="formService.prevStep()" class="back">Go Back</button>
+     }
+     @if (formService.currentStep() < 3) {
+       <button (click)="formService.nextStep()" class="next">Next Step</button>
 
-@if (formService.currentStep() === 3) {
-  <button routerLink="./thank-you" >Complete</button>
+     }
 
-}
+     @if (formService.currentStep() === 3) {
+       <button routerLink="./thank-you" class="complete">Complete</button>
+
+     }
+   </div>
+ }

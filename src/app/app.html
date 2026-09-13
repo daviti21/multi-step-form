@@ -1,12 +1,26 @@
-<div class="container">
+<div class="container-des">
  <div class="inf-box">
    <app-sidebar></app-sidebar>
    <div class="content">
-     <router-outlet></router-outlet>
+     <div class="page-content">
+       <router-outlet></router-outlet>
+     </div>
+    <app-navigation-buttons></app-navigation-buttons>
    </div>
  </div>
-  @if (formService.currentPath() !== '/thank-you'){
-    <app-navigation-buttons></app-navigation-buttons>
-  }
+
 </div>
+
+<div class="container-mob">
+  <div class="inf-box">
+    <app-sidebar></app-sidebar>
+    <div class="content">
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+  <app-navigation-buttons></app-navigation-buttons>
+</div>
+
+
 

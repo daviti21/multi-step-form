@@ -1,52 +1,101 @@
 @media screen and (max-width: 767px) {
-  .container{
+  .container-mob{
      max-width: 480px;
     margin: 0 auto;
+    height: 100vh;
+    display: flex;
+flex-direction: column;
+    justify-content: space-between;
+   }
+
+  .container-des{
+    display: none;
   }
 }
-@media  screen and (min-width: 767px) {
-  .container{
-     width: 85%;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .container-des {
+    width: 85%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    background-color: white;
   }
 
-  .inf-box{
+  .content {
     display: flex;
-     gap: 3rem;
-  }
-
-  app-sidebar{
-    flex: 1;
-  }
-  router-outlet{
-     width: 100%;
-  }
-  .content{
+    flex-direction: column;
     flex: 2;
   }
 
-}
-@media  screen and (min-width: 767px) and (max-width: 1023px) {
-  .container{
-    width: 80%;
+  .page-content {
+    flex: 1;
   }
+
+  app-navigation-buttons {
+    margin-top: auto;
+  }
+
+  .container-mob {
+    display: none;
+  }
+
+  .inf-box {
+    display: flex;
+    gap: 3rem;
+  }
+
+  app-sidebar {
+    flex: 1;
+  }
+
+  router-outlet {
+    width: 100%;
+  }
+
 }
-@media  screen and (min-width: 1023px){
-  .container{
+
+@media screen and (min-width: 1024px) {
+
+  .container-des {
     width: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    background-color: white;
   }
-  app-sidebar{
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+  }
+
+  .page-content {
+    flex: 1;
+  }
+
+  app-navigation-buttons {
+    margin-top: auto;
+  }
+
+  .container-mob {
+    display: none;
+  }
+
+  .inf-box {
+    display: flex;
+    gap: 3rem;
+  }
+
+  app-sidebar {
     flex: .9;
   }
 
-}
+  router-outlet {
+    width: 100%;
+  }
 
+}

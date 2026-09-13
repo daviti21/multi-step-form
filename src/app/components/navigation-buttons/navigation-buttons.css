@@ -1,0 +1,92 @@
+.container{
+  display: flex;
+  align-items: center;
+   background-color: white;
+  position: relative;
+}
+
+.back{
+  position: absolute;
+   width: max-content;
+  background-color: transparent;
+  color: gray;
+ }
+
+button{
+  border: none;
+}
+
+.next, .complete{
+   border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+}
+
+.next{
+  background-color: #03295A;
+}
+
+.complete{
+  background-color: #493FF3;
+}
+@media screen and (max-width: 767px) {
+  .container{
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .next, .complete{
+    width: 110px;
+    height: 40px;
+   right: 1rem;
+   }
+
+  .back{
+    font-size: 0.9rem;
+     left: 1rem;
+  }
+}
+
+@media screen and (min-width: 767px){
+  .container{
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .next, .complete{
+    width: 95px;
+    height: 35px;
+    right: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .back{
+    font-size: 0.85rem;
+    left: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  button:hover{
+    cursor: pointer;
+  }
+
+  .back:hover{
+    color: #03295A;
+  }
+
+
+  .next, .complete{
+    width: 130px;
+    height: 45px;
+    right: 1.3rem;
+    font-size: 0.93rem;
+  }
+
+  .back{
+     left: 1.3rem;
+    font-size: 0.93rem;
+  }
+
+}
