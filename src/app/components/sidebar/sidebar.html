@@ -1,0 +1,28 @@
+ <div class="container-des">
+   @for (page of formService.pages; track page;) {
+     <div class="page-box">
+       <div class="num-box"
+            [class.active]="
+  formService.currentPath() ===   page.path ||
+  (page.number === 4 && formService.currentPath() === '/thank-you')
+"       >{{page.number}}</div>
+       <div class="info">
+         <p class="step">{{page.step}}</p>
+         <p class="tit">{{page.title}}</p>
+       </div>
+     </div>
+   }
+
+ </div>
+ <div class="container-mob">
+   <div class="page-box">
+   @for (page of formService.pages; track page;) {
+       <div class="num-box"
+            [class.active]="
+  formService.currentPath() ===  page.path ||
+  (page.number === 4 && formService.currentPath() === '/thank-you')
+"       >{{page.number}}</div>
+   }
+   </div>
+ </div>
+

@@ -1,0 +1,138 @@
+.page-box{
+  display: flex;
+}
+
+.num-box{
+ text-align: center;
+   border: 1.5px solid white;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+}
+
+.active{
+  background-color: #BFE2F8;
+  color: darkblue;
+}
+
+.step{
+  color: #ffffff;
+}
+
+
+@media  screen and (max-width: 767px) {
+   .container-mob{
+     background-image: url("/images/bg-sidebar-mobile.svg");
+     background-repeat: no-repeat;
+     min-width: 100%;
+     margin: 0 auto;
+      background-size: cover;
+     background-position: top center;
+     height: 180px;
+
+   }
+   .container-des{
+     display: none;
+   }
+
+  .page-box {
+    flex-direction: row;
+    width: 280px;
+    margin: 0 auto;
+    justify-content: space-around;
+    font-size: .9rem;
+    position: relative;
+    top: 2rem;
+
+  }
+
+  .num-box{
+    padding: 8px 12px;
+  }
+ }
+@media  screen and (min-width: 767px) {
+  .container-mob{
+    display: none;
+  }
+
+  .container-des{
+    width: 100%;
+     background-image: url("/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    background-position:bottom center;
+     background-repeat: no-repeat;
+    margin: .5rem;
+    border-radius: 20px;
+    height: 320px;
+   }
+
+  .page-box {
+    align-items: center;
+    gap: 1rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    color: white;
+  }
+
+    .num-box{
+      padding: 8px 12px;
+      font-size: .9rem;
+    }
+
+    .tit{
+      font-size: .8rem;
+    }
+
+    .step{
+      display: none;
+    }
+}
+
+@media  screen and  (min-width: 1023px) {
+  .container-mob{
+    display: none;
+  }
+
+  .container-des{
+    width: 100%;
+     background-image: url("/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    background-position:bottom center;
+    background-repeat: no-repeat;
+    margin: .5rem;
+    border-radius: 20px;
+    height: 400px;
+   }
+
+  .page-box {
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
+
+  }
+
+  .num-box{
+    padding: 9px 14px;
+    font-size: .9rem;
+  }
+
+  .tit{
+    font-size: .8rem;
+  }
+
+  .step{
+    display: block;
+    font-size: .7rem;
+  }
+
+
+}
+
+@media  screen and (min-width: 1200px) {
+  .tit{
+    font-size: .85rem;
+  }
+
+  .step{
+     font-size: .8rem;
+  }
+}

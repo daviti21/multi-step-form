@@ -1,0 +1,52 @@
+@media screen and (max-width: 767px) {
+  .container{
+     max-width: 480px;
+    margin: 0 auto;
+  }
+}
+@media  screen and (min-width: 767px) {
+  .container{
+     width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .inf-box{
+    display: flex;
+     gap: 3rem;
+  }
+
+  app-sidebar{
+    flex: 1;
+  }
+  router-outlet{
+     width: 100%;
+  }
+  .content{
+    flex: 2;
+  }
+
+}
+@media  screen and (min-width: 767px) and (max-width: 1023px) {
+  .container{
+    width: 80%;
+  }
+}
+@media  screen and (min-width: 1023px){
+  .container{
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+  app-sidebar{
+    flex: .9;
+  }
+
+}
+
