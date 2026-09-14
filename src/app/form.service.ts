@@ -1,14 +1,18 @@
 import { Injectable, signal, inject } from '@angular/core';
 import { ActivatedRoute, Router  } from '@angular/router';
- @Injectable({
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+
+@Injectable({
   providedIn: 'root'
 })
 export class FormService {
   router = inject(Router);
   route = inject(ActivatedRoute);
+   showNavigation = signal(true)
   currentStep = signal(0);
     currentPath = signal('');
-   nextStep(){
+    hideComplete = signal(false);
+    nextStep(){
     this.router.navigate([this.pages[this.currentStep() + 1].path])
     this.currentStep.update(num => num + 1)
   };
@@ -35,7 +39,23 @@ export class FormService {
   constructor() {
     this.router.events.subscribe(() => {
       this.currentPath.set(this.router.url);
-
+   if (this.router.url === '/thank-you') {
+this.showNavigation.set(false)
+    }else{
+     this.showNavigation.set(true)
+   }
+   if(this.router.url === '/summary'){
+     this.hideComplete.set(true)
+   }else{
+     this.hideComplete.set(false)
+   }
     })
   }
+
+   form = new FormGroup({
+     name: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]),
+     email: new FormControl('', [Validators.required, Validators.email]),
+     phone: new FormControl('', [Validators.required, Validators.pattern(/^(?:\+995\s?)?5\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/)])
+   });
+
 }

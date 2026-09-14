@@ -1,3 +1,70 @@
-<!-- <p>personal info works!</p>-->
-<!-- <button (click)="formService.changeMonthly()">Change</button>-->
-<!-- <p>{{formService.monthly() ? 'month' : 'year'}}</p>-->
+<div class="container">
+  <form [formGroup]="formService.form">
+
+    <p class="form-tit">Personal info</p>
+
+    <p class="text">
+      Please provide your name, email address, and phone number.
+    </p>
+
+     <div class="form-box">
+       <div class="form-group">
+         <div class="label-row">
+           <label for="name">Name</label>
+           @if (formService.form.get('name')?.touched) {
+             @if (formService.form.get('name')?.hasError('required')) {
+               <span class="error">Please enter your name</span>
+             } @else if (formService.form.get('name')?.hasError('pattern')) {
+               <span class="error">Only letters are allowed</span>
+             }
+           }
+       </div>
+         <input
+           id="name"
+           type="text"
+           formControlName="name"
+           placeholder="e.g. Stephen King"
+         >
+       </div>
+
+       <div class="form-group">
+    <div class="label-row">
+      <label for="email">Email Address</label>
+      @if (formService.form.get('email')?.touched) {
+        @if (formService.form.get('email')?.hasError('required')) {
+          <p class="error">Please enter your email</p>
+        } @else if (formService.form.get('email')?.hasError('email')) {
+          <p class="error">Please enter a valid email address</p>
+        }
+      }
+    </div>
+          <input
+           id="email"
+           type="email"
+           formControlName="email"
+           placeholder="e.g. stephenking@lorem.com"
+         >
+       </div>
+
+       <div class="form-group">
+         <div class="label-row">
+           <label for="phone">Phone Number</label>
+           @if (formService.form.get('phone')?.touched){
+             @if (formService.form.get('phone')?.hasError('required')){
+               <p class="error">Please enter your phone number</p>
+             } @else if (formService.form.get('phone')?.hasError('pattern')){
+               <p class="error">Please enter a valid phone number</p>
+             }
+           }
+         </div>
+          <input
+           id="phone"
+           type="tel"
+           formControlName="phone"
+           placeholder="e.g. +995 555 12 34 56"
+         >
+       </div>
+     </div>
+
+  </form>
+</div>

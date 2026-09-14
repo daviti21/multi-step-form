@@ -1,19 +1,15 @@
-
-
-
- @if (!formService.currentPath('thank-you')) {
-   <div class="container">
+<div class="container">
      @if (formService.currentStep() > 0) {
        <button (click)="formService.prevStep()" class="back">Go Back</button>
      }
-     @if (formService.currentStep() < 3) {
-       <button (click)="formService.nextStep()" class="next">Next Step</button>
+     @if (!formService.hideComplete()) {
+       <button (click)="formService.nextStep()" class="next" [disabled]="formService.currentPath() === 'your-info' && !formService.form.valid">Next Step</button>
 
      }
 
-     @if (formService.currentStep() === 3) {
+     @if (formService.hideComplete()) {
        <button routerLink="./thank-you" class="complete">Complete</button>
 
      }
    </div>
- }
+
