@@ -3,7 +3,7 @@
        <button (click)="formService.prevStep()" class="back">Go Back</button>
      }
      @if (!formService.hideComplete()) {
-       <button (click)="formService.nextStep()" class="next" [disabled]="formService.currentStep() === 0 && !formService.isValid()">Next Step</button>
+       <button (click)="formService.nextStep()" class="next" [disabled]="!formService.isStepValid()">Next Step</button>
 
      }
 

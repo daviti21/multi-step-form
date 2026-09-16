@@ -1,3 +1,31 @@
-<button (click)="formService.changeMonthly()">Change</button>
-<p>{{formService.monthly() ? 'month' : 'year'}}</p>
 
+<div class="container">
+  <p class="tit">Select your plan</p>
+  <div class="txt">You have the option of monthly or yearly billing.</div>
+</div>
+<div class="plan-box" >
+  @for (plan of formService.plans; track plan) {
+    <label class="plan"
+           [class.active]="formService.selectedPlan() === plan"
+           (click)="formService.selectedPlan.set(plan)"
+    >
+
+      <input type="radio" name="plan">
+      <img [src]="plan.img">
+
+      <div class="right">
+        <p class="plan-tit">{{ plan.tit }}</p>
+        <p class="plan-price">
+          {{ formService.monthly() ? '$' + plan.price.month + '/month' : '$' + plan.price.year + '/year' }}        </p>
+      </div>
+    </label>
+  }
+</div>
+
+<div class="change-box">
+  <p class="month">Monthly</p>
+  <div class="button-box" [class.active]="!formService.monthly()" (click)="formService.changeMonthly()">
+    <i class="fa-solid fa-circle" ></i>
+  </div>
+   <p class="year">Yearly</p>
+</div>

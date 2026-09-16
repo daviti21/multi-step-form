@@ -1,14 +1,14 @@
-import { Injectable, signal, inject } from '@angular/core';
+import { Injectable, signal, inject, computed } from '@angular/core';
 import { ActivatedRoute, Router  } from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-
+import {Plan} from './plan.interface'
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
   constructor() {
      this.form.statusChanges.subscribe( () => {
-this.isValid.set(this.form.valid)
+this.isFormValid.set(this.form.valid)
      })
     this.router.events.subscribe(() => {
       this.currentPath.set(this.router.url);
@@ -24,13 +24,40 @@ this.isValid.set(this.form.valid)
       }
     })
   }
+
+  isStepValid = computed(() => {
+    switch (this.currentStep()) {
+      case 0:
+        return this.isFormValid();
+
+      case 1:
+        return  this.selectedPlan() !== null;
+
+      case 2:
+        return true;
+
+      case 3:
+        return true;
+
+      default:
+        return true;
+
+    }
+  });
+
+
   router = inject(Router);
-  route = inject(ActivatedRoute);
+
+
    showNavigation = signal(true)
   currentStep = signal(0);
     currentPath = signal('');
     hideComplete = signal(false);
-    isValid = signal(false);
+    isFormValid = signal(false);
+
+
+
+
      nextStep(){
     this.router.navigate([this.pages[this.currentStep() + 1].path])
     this.currentStep.update(num => num + 1)
@@ -50,13 +77,6 @@ this.isValid.set(this.form.valid)
 
   ];
 
-  monthly = signal(false);
-  changeMonthly() {
-    this.monthly.update(v => !v)
-  }
-
-
-
   form = new FormGroup({
     name: new FormControl('', [
       Validators.required,
@@ -71,5 +91,32 @@ this.isValid.set(this.form.valid)
       Validators.pattern(/^(?:\+995\s?)?5\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/)
     ])
   })
+
+
+
+  monthly = signal(false);
+  changeMonthly() {
+    this.monthly.update(v => !v)
   }
+
+
+selectedPlan = signal<Plan | null>(null);
+  plans = [
+    {img: '/images/icon-arcade.svg', tit: 'Arcade', price: {month: 9, year: 90}},
+    {img: '/images/icon-advanced.svg', tit: 'Advanced', price: {month: 12, year: 120}},
+    {img: '/images/icon-pro.svg', tit: 'Pro', price: {month: 15, year: 150}}
+  ]
+
+  selectedPrice = computed(() => {
+    const plan = this.selectedPlan();
+
+    if (!plan) return 0;
+
+    return this.monthly() ? plan.price.month : plan.price.year;
+  });
+}
+
+
+
+
 

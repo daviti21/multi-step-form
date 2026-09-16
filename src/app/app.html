@@ -1,19 +1,15 @@
 <div class="container">
- <div class="inf-box">
-   <app-sidebar></app-sidebar>
-   <div class="content">
-     <div class="page-box">
-       <router-outlet></router-outlet>
-     </div>
-     @if (formService.showNavigation()) {
-       <app-navigation-buttons></app-navigation-buttons>
+  <div class="inf-box">
+    <app-sidebar></app-sidebar>
 
-     }
+    <div class="content">
+      <div class="form-content">
+        <router-outlet></router-outlet>
+      </div>
+
+      @if (formService.showNavigation()) {
+        <app-navigation-buttons></app-navigation-buttons>
+      }
     </div>
- </div>
-
+  </div>
 </div>
-
-
-
-

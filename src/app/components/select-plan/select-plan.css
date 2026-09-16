@@ -1,0 +1,207 @@
+.tit,
+.plan-tit {
+  color: #03295A;
+  font-weight: bold;
+}
+
+.txt,
+.plan-price {
+  color: #b2b3b8;
+}
+
+.plan input[type="radio"] {
+  display: none;
+}
+
+.plan.active {
+  border: 1px solid rebeccapurple;
+}
+
+label {
+  border: 1px solid #b2b3b8;
+  display: flex;
+  flex-direction: row;
+}
+
+.change-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  background: #F5F6FC;
+}
+
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 30px;
+  padding: .1rem;
+  height: max-content;
+  background: #03295A;
+  border-radius: 20px;
+}
+
+.button-box.active {
+  justify-content: flex-start;
+}
+
+i {
+  color: #fff;
+  border: none;
+}
+
+.year{
+  color: gray;
+}
+
+.month{
+  color: #03295A;
+}
+@media (max-width: 767px) {
+  .container {
+    padding: .5rem 1rem;
+  }
+
+  label {
+    width: 85%;
+    height: 70px;
+    margin: .5rem auto;
+    padding-left: .8rem;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  img {
+    width: 55px;
+  }
+
+  .tit {
+    font-size: 1.5rem;
+  }
+
+  .txt {
+    font-size: .9rem;
+  }
+
+  .plan-price {
+    font-size: .85rem;
+  }
+
+  .change-box {
+    margin: auto auto .7rem;
+    font-size: .9rem;
+    gap: .5rem;
+  }
+
+  i {
+    transform: scale(.8);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: .5rem 0 0;
+  }
+
+  label {
+    width: 30%;
+    margin-top: .5rem;
+    padding: .3rem 0 .0rem .8rem;
+    align-items: center;
+    gap: .2rem;
+    border-radius: 10px;
+  }
+
+  img {
+    width: 45px;
+  }
+
+  .plan {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+  }
+
+  .plan-box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .change-box {
+    margin: .7rem auto;
+  }
+
+  i {
+    transform: scale(.7);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tit {
+    font-size: 1.8rem;
+  }
+
+  .txt {
+    font-size: .95rem;
+    margin-top: -.5rem;
+  }
+
+  .plan-price {
+    font-size: .92rem;
+  }
+
+  .change-box {
+    margin: 2rem auto 0;
+    font-size: 1rem;
+    gap: .8rem;
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  .button-box {
+    width: 40px;
+    padding: .15rem;
+  }
+
+  i {
+    transform: scale(.8);
+  }
+
+  .plan-box {
+    gap: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .plan:hover,
+  .button-box:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .txt {
+    font-size: .82rem;
+
+  }
+
+  .tit {
+    font-size: 1.2rem;
+  }
+
+  .plan-price {
+    font-size: .78rem;
+  }
+
+  .plan-box {
+    gap: .8rem;
+    margin-top: .5rem;
+  }
+
+  .change-box {
+    font-size: .9rem;
+    gap: .5rem;
+    width: 90%;
+    border-radius: 10px;
+  }
+}

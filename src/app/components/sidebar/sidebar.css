@@ -3,8 +3,8 @@
 }
 
 .num-box{
- text-align: center;
-   border: 1.5px solid white;
+  text-align: center;
+  border: 1.5px solid white;
   border-radius: 50%;
   color: white;
   font-weight: bold;
@@ -21,19 +21,19 @@
 
 
 @media  screen and (max-width: 767px) {
-   .container-mob{
-     background-image: url("/images/bg-sidebar-mobile.svg");
-     background-repeat: no-repeat;
-     min-width: 100%;
-     margin: 0 auto;
-      background-size: cover;
-     background-position: top center;
-     height: 180px;
+  .container-mob{
+    background-image: url("/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    min-width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: top center;
+    height: 180px;
 
-   }
-   .container-des{
-     display: none;
-   }
+  }
+  .container-des{
+    display: none;
+  }
 
   .page-box {
     flex-direction: row;
@@ -49,7 +49,7 @@
   .num-box{
     padding: 8px 12px;
   }
- }
+}
 @media  screen and (min-width: 767px) {
   .container-mob{
     display: none;
@@ -57,14 +57,14 @@
 
   .container-des{
     width: 100%;
-     background-image: url("/images/bg-sidebar-desktop.svg");
+    background-image: url("/images/bg-sidebar-desktop.svg");
     background-size: cover;
     background-position:bottom center;
-     background-repeat: no-repeat;
+    background-repeat: no-repeat;
     margin: .5rem;
     border-radius: 20px;
     height: 350px;
-   }
+  }
 
   .page-box {
     align-items: center;
@@ -74,18 +74,18 @@
     color: white;
   }
 
-    .num-box{
-      padding: 8px 12px;
-      font-size: .9rem;
-    }
+  .num-box{
+    padding: 8px 12px;
+    font-size: .9rem;
+  }
 
-    .tit{
-      font-size: .8rem;
-    }
+  .tit{
+    font-size: .8rem;
+  }
 
-    .step{
-      display: none;
-    }
+  .step{
+    display: none;
+  }
 }
 
 @media  screen and  (min-width: 1023px) {
@@ -95,14 +95,14 @@
 
   .container-des{
     width: 100%;
-     background-image: url("/images/bg-sidebar-desktop.svg");
+    background-image: url("/images/bg-sidebar-desktop.svg");
     background-size: cover;
     background-position:bottom center;
     background-repeat: no-repeat;
     margin: .5rem;
     border-radius: 20px;
     height: 450px;
-   }
+  }
 
   .page-box {
     padding-left: 0.7rem;
@@ -133,7 +133,7 @@
   }
 
   .step{
-     font-size: .8rem;
+    font-size: .8rem;
   }
 
   .container-des{
