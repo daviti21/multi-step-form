@@ -60,7 +60,7 @@ this.isValid.set(this.form.valid)
   form = new FormGroup({
     name: new FormControl('', [
       Validators.required,
-      Validators.pattern(/^[a-zA-Z\s]+$/)
+      Validators.pattern(/^[A-Za-z]+(?: [A-Za-z]+)*$/)
     ]),
     email: new FormControl('', [
       Validators.required,

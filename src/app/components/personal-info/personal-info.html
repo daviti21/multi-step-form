@@ -16,7 +16,7 @@
              @if (formService.form.get('name')?.hasError('required')) {
                <span class="error">Please enter your name</span>
              } @else if (formService.form.get('name')?.hasError('pattern')) {
-               <span class="error">Only letters are allowed</span>
+               <span class="error">Only English letters are allowed</span>
              }
            }
        </div>
