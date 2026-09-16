@@ -6,13 +6,32 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   providedIn: 'root'
 })
 export class FormService {
+  constructor() {
+     this.form.statusChanges.subscribe( () => {
+this.isValid.set(this.form.valid)
+     })
+    this.router.events.subscribe(() => {
+      this.currentPath.set(this.router.url);
+      if (this.router.url === '/thank-you') {
+        this.showNavigation.set(false)
+      }else{
+        this.showNavigation.set(true)
+      }
+      if(this.router.url === '/summary'){
+        this.hideComplete.set(true)
+      }else{
+        this.hideComplete.set(false)
+      }
+    })
+  }
   router = inject(Router);
   route = inject(ActivatedRoute);
    showNavigation = signal(true)
   currentStep = signal(0);
     currentPath = signal('');
     hideComplete = signal(false);
-    nextStep(){
+    isValid = signal(false);
+     nextStep(){
     this.router.navigate([this.pages[this.currentStep() + 1].path])
     this.currentStep.update(num => num + 1)
   };
@@ -33,29 +52,24 @@ export class FormService {
 
   monthly = signal(false);
   changeMonthly() {
-    this.monthly.update(v => v = !v)
+    this.monthly.update(v => !v)
   }
 
-  constructor() {
-    this.router.events.subscribe(() => {
-      this.currentPath.set(this.router.url);
-   if (this.router.url === '/thank-you') {
-this.showNavigation.set(false)
-    }else{
-     this.showNavigation.set(true)
-   }
-   if(this.router.url === '/summary'){
-     this.hideComplete.set(true)
-   }else{
-     this.hideComplete.set(false)
-   }
-    })
+
+
+  form = new FormGroup({
+    name: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/^[a-zA-Z\s]+$/)
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    phone: new FormControl('', [
+      Validators.required,
+      Validators.pattern(/^(?:\+995\s?)?5\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/)
+    ])
+  })
   }
 
-   form = new FormGroup({
-     name: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]),
-     email: new FormControl('', [Validators.required, Validators.email]),
-     phone: new FormControl('', [Validators.required, Validators.pattern(/^(?:\+995\s?)?5\d{2}\s?\d{2}\s?\d{2}\s?\d{2}$/)])
-   });
-
-}

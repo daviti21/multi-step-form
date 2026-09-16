@@ -63,7 +63,7 @@
      background-repeat: no-repeat;
     margin: .5rem;
     border-radius: 20px;
-    height: 320px;
+    height: 350px;
    }
 
   .page-box {
@@ -101,7 +101,7 @@
     background-repeat: no-repeat;
     margin: .5rem;
     border-radius: 20px;
-    height: 400px;
+    height: 450px;
    }
 
   .page-box {
@@ -134,5 +134,9 @@
 
   .step{
      font-size: .8rem;
+  }
+
+  .container-des{
+    height: 500px;
   }
 }

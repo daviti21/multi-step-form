@@ -1,10 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormService } from '../../form.service';
 import { Router, RouterLink } from '@angular/router';
-@Component({
+ @Component({
   imports: [
-    RouterLink
-  ],
+    RouterLink,
+   ],
   selector: 'app-navigation-buttons',
   styleUrl: './navigation-buttons.css',
   templateUrl: './navigation-buttons.html',

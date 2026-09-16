@@ -1,5 +1,17 @@
 input:focus{
-  outline:none;
+   outline-color: darkslateblue;
+}
+
+input{
+  border: 1px solid #b3abab;
+  background-color: transparent;
+  color: #043573;
+}
+
+
+input:-webkit-autofill {
+  transition: background-color 9999s ease-in-out 0s;
+  -webkit-text-fill-color: #043573 !important;
 }
 
 .form-tit{
@@ -8,10 +20,10 @@ input:focus{
 }
 
 .text{
-  color:#BFC0C7;
+  color: #b2b3b8;
 }
 
-label, input{
+label{
   color: #043573;
 }
 
@@ -29,24 +41,164 @@ label, input{
 .error {
   color: #ed3548;
   font-size: 12px;
-  font-weight: 500;
+   font-weight: bold;
+
+}
+
+.error-input{
+  border-color: red;
 }
  @media screen and (max-width: 767px){
    .container{
      padding: 1rem 1rem 0;
-
+     margin-bottom: 2rem;
    }
 
-   .form-box{
-     gap: 1rem;
-     margin-bottom: 1rem;
-   }
+
 
    .form-box{
      width: 100%;
+     gap: 1rem;
     }
 
    .form-tit{
      font-size: 1.5rem;
    }
+   .label-row {
+     max-height: 1rem;
+   }
+
+   input{
+     height: 2.5rem;
+     font-size: .9rem;
+     margin-top: .6rem;
+     padding-left: .5rem;
+    }
+
+   input::placeholder{
+      font-size: .9rem;
+   }
+
+   .text{
+     font-size: .9rem;
+   }
+
+   label {
+     font-size: .8rem;
+   }
+
+   .error{
+     font-size: .7rem;
+    }
  }
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  .container{
+    padding: 1.2rem 1.2rem 0;
+    margin: -1rem auto  0;
+
+   }
+
+  .form-box{
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .form-tit{
+    font-size: 1.2rem;
+  }
+
+  .text{
+    font-size: .82rem;
+  }
+
+  label{
+    font-size: .85rem;
+  }
+
+  .error{
+    font-size: .8rem;
+  }
+
+  input::placeholder{
+    font-size: .8rem;
+  }
+
+  input{
+    height: 1.7rem;
+    font-size: 1rem;
+    margin-top: .3rem;
+    padding-left: .8rem;
+  }
+
+  .label-row {
+    max-height: .85rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container{
+    padding: 1rem 1rem 0;
+    margin: -1rem auto  0;
+  }
+
+
+
+  .form-box{
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .form-tit{
+    font-size: 1.8rem;
+   }
+
+  .label-row {
+    max-height: 1rem;
+  }
+
+  input{
+    height: 2.2rem;
+    font-size: .9rem;
+    margin-top: .65rem;
+    padding-left: 1rem;
+  }
+
+  input::placeholder{
+    font-size: .9rem;
+  }
+
+  .text{
+    font-size: .95rem;
+  }
+
+  label {
+    font-size: .9rem;
+  }
+
+  .error{
+    font-size: .8rem;
+  }
+
+
+}
+
+
+@media screen and (min-width: 1200px){
+  .form-tit{
+    font-size: 2rem;
+  }
+
+  .text{
+    font-size: 1rem;
+  }
+
+  .form-box{
+    margin-top: 2rem;
+  }
+
+  input{
+    height: 2.5rem;
+  }
+}
