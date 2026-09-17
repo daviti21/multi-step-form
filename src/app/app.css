@@ -54,6 +54,10 @@
   border-radius: 10px;
   width: 90%;
 }
+
+  .container:has(app-personal-info input:focus) {
+    height: 670px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
