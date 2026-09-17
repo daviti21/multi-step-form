@@ -47,6 +47,7 @@
 
   app-navigation-buttons {
     margin-top: auto;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 .form-content{
   margin: -5rem auto 0;
