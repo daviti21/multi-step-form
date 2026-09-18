@@ -135,6 +135,16 @@ label{
   .label-row {
     max-height: .85rem;
   }
+
+  input::placeholder{
+    font-size: .8rem;
+  }
+
+  input{
+    height: 2rem;
+    font-size: .9rem;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {

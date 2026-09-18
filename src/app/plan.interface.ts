@@ -1,7 +1,7 @@
 export interface Plan {
   img: string;
   tit: string;
-  price: {
+   price: {
     month: number;
     year: number;
   };

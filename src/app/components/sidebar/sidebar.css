@@ -20,7 +20,7 @@
 }
 
 
-@media  screen and (max-width: 767px) {
+@media  screen and (max-width: 768px) {
   .container-mob{
     background-image: url("/images/bg-sidebar-mobile.svg");
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@
     padding: 8px 12px;
   }
 }
-@media  screen and (min-width: 767px) {
+@media  screen and (min-width: 769px) {
   .container-mob{
     display: none;
   }
@@ -88,7 +88,7 @@
   }
 }
 
-@media  screen and  (min-width: 1023px) {
+@media  screen and  (min-width: 1024px) {
   .container-mob{
     display: none;
   }

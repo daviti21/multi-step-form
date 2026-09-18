@@ -58,7 +58,7 @@ i {
 .month{
   color: #03295A;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .container {
     padding: .5rem 1rem;
   }
@@ -100,7 +100,7 @@ i {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .container {
     padding: .5rem 0 0;
   }

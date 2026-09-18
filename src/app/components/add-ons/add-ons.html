@@ -1,1 +1,22 @@
-<p>add-ons works!</p>
+ <div class="container">
+   <p class="tit">Pick add-ons</p>
+   <p class="txt">Add-ons help enhance your gaming experience.</p>
+   <div class="input-box">
+     @for (ons of formService.addons; track ons) {
+       <label class="ons"
+       [class.active] = "formService.selectedOns().some(on => on.id === ons.id)"
+        (click)="formService.toggleAddOn(ons)"
+        >
+         <input type="checkbox" name="ons"
+          [checked] = "formService.selectedOns().some(on => on.id === ons.id)"
+           (change)="formService.toggleAddOn(ons)"
+         >
+         <div class="inf-box">
+           <p class='tit-on'>{{ons.name}}</p>
+           <p class="des">{{ons.description}}</p>
+         </div>
+         <p class="price">{{formService.monthly() ? '+$' + ons.price.year + '/year' : '+$' + ons.price.month + '/mo'}}</p>
+       </label>
+     }
+   </div>
+ </div>

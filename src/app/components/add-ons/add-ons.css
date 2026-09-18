@@ -1,0 +1,215 @@
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+ .ons{
+   display: flex;
+   width: 100%;
+   border: 1px solid #b2b3b8;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .inf-box{
+   display: flex;
+   width: 220px;
+   flex-direction: column;
+   line-height: 10px;
+  }
+
+ .input-box{
+   display: flex;
+   flex-direction: column;
+  }
+
+ .ons.active{
+   border: 1px solid #4757c6;
+   background-color: rgb(71 87 198 / 0.06);
+ }
+
+ .tit{
+   color: #03295A;
+   font-weight: bold;
+ }
+
+ .tit-on{
+   color: #03295A;
+   font-weight: 500;
+ }
+
+ .txt, .des{
+   color: #b2b3b8;
+ }
+
+ .price{
+   color: mediumpurple;
+ }
+
+ input[type=checkbox] {
+ accent-color: #483eff;
+  }
+
+
+ @media screen and (max-width: 768px) {
+   .container{
+     padding: 1rem 1rem 0;
+     margin-bottom: 2rem;
+   }
+
+   .tit{
+     font-size: 1.5rem;
+   }
+
+   .txt{
+     font-size: .9rem;
+     margin: -0.5rem 0 1rem;
+   }
+
+    .des{
+      font-size: .85rem;
+    }
+
+    .price{
+      font-size: .9rem;
+      margin-right: 0.5rem;
+    }
+
+    .inf-box{
+      width: 190px;
+
+    }
+
+   .ons{
+      padding: 0 .2rem;
+   }
+
+   input[type=checkbox] {
+     height: 18px;
+     width: 16px;
+   }
+
+   .input-box{
+     gap: .8rem;
+   }
+ }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container{
+    padding-right: 2rem;
+
+  }
+
+  .tit{
+    font-size: 1.2rem;
+  }
+
+  .txt{
+    font-size: .9rem;
+    margin: -0.5rem 0 1rem;
+  }
+
+  .des{
+    font-size: .75rem;
+  }
+
+  .price{
+    font-size: .85rem;
+    margin-right: 0.5rem;
+  }
+
+  .inf-box{
+    width: 190px;
+    }
+
+  .tit-on{
+    font-size: .9rem;
+  }
+
+  .ons{
+    height: 65px;
+    padding: 0 1rem;
+  }
+
+  .input-box{
+    gap: .6rem;
+  }
+
+  input[type=checkbox] {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .tit{
+    font-size: 1.8rem;
+  }
+
+.ons:hover, input[type=checkbox]:hover {
+  cursor: pointer;
+}
+
+  .txt{
+    font-size: .95rem;
+    margin: -0.8rem 0 1.2rem;
+  }
+
+  .ons{
+    padding: 0 .7rem;
+    height: 75px;
+   }
+
+  .input-box{
+    gap: .8rem;
+  }
+
+  .des{
+    font-size: .8rem;
+  }
+
+  input[type=checkbox] {
+    height: 18px;
+    width: 16px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .tit{
+    font-size: 2rem;
+  }
+
+  .container{
+    padding-right: 2.3rem;
+
+  }
+
+  .txt{
+    font-size: 1rem;
+    margin: -0.2rem 0 1.5rem;
+  }
+
+  .ons{
+    padding: 0 1rem;
+
+  }
+
+  .input-box{
+    gap: 1rem;
+  }
+
+  .des{
+    font-size: .9rem;
+  }
+
+  .tit-on{
+    font-size: 1.1rem;
+  }
+
+  input[type=checkbox] {
+    height: 20px;
+    width: 18px;
+  }
+}

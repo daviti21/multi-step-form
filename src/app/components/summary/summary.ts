@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormService } from '../../form.service';
 
 @Component({
   imports: [],
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
   templateUrl: './summary.html',
 })
 export class Summary {
+  formService = inject(FormService);
 }

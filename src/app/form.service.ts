@@ -1,7 +1,8 @@
 import { Injectable, signal, inject, computed } from '@angular/core';
 import { ActivatedRoute, Router  } from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Plan} from './plan.interface'
+import {Plan} from './plan.interface';
+import {AddOn} from './add-ons.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -114,9 +115,26 @@ selectedPlan = signal<Plan | null>(null);
 
     return this.monthly() ? plan.price.month : plan.price.year;
   });
+
+
+ selectedOns = signal<AddOn[]>([]);
+  toggleAddOn(addOn: AddOn) {
+    this.selectedOns.update(selected => {
+      const exists = selected.some(on => on.id === addOn.id);
+      if (exists) {
+       return selected.filter(on => on.id !== addOn.id)
+      }
+
+      return [...selected, addOn]
+    })}
+addons: AddOn[] = [
+  {   name: 'Online service', description: 'Access to multiplayer games', price: { month: 1, year: 10 }, id: 1},
+  {  name: 'Larger storage', description: 'Extra 1TB of cloud save', price: { month: 2, year: 20 }, id: 2 },
+  {   name: 'Customizable Profile', description: 'Custom theme on your profile', price: { month: 2, year: 20 }, id: 3}
+
+]
+
+
+
 }
-
-
-
-
 

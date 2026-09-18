@@ -16,7 +16,7 @@
       <div class="right">
         <p class="plan-tit">{{ plan.tit }}</p>
         <p class="plan-price">
-          {{ formService.monthly() ? '$' + plan.price.month + '/month' : '$' + plan.price.year + '/year' }}        </p>
+          {{ formService.monthly() ? '$' + plan.price.year + '/year'  : '$' + plan.price.month + '/mo'}}   </p>
       </div>
     </label>
   }
