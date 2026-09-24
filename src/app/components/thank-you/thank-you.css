@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: auto;
 }
 
 .tit{
@@ -17,8 +18,7 @@ p{
 
 @media screen and (max-width: 768px) {
   .container{
-    margin: auto;
-    height: 300px;
+     height: 300px;
   }
 
   .tit{
@@ -27,6 +27,44 @@ p{
 
   p{
     font-size: 1rem;
-    max-width: 38ch;
+    max-width: 36ch;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container{
+     height: 280px;
+  }
+
+  .tit{
+    font-size: 1.2rem;
+  }
+
+  p{
+    font-size: 1rem;
+    max-width: 36ch;
+  }
+
+  img{
+    transform: scale(.9);
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+img{
+  transform: scale(1.1);
+}
+
+  .tit{
+    font-size: 1.5rem;
+  }
+
+  img:hover{
+    cursor: pointer;
+  }
+
+  p{
+    font-size: 1.1rem;
+    max-width: 36ch;
   }
 }

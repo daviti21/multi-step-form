@@ -4,7 +4,7 @@
    <div class="input-box">
      @for (ons of formService.addons; track ons) {
        <label class="ons"
-       [class.active] = "formService.selectedOns().some(on => on.id === ons.id)";
+       [class.active] = "formService.selectedOns().some(on => on.id === ons.id)"
           >
          <input type="checkbox" name="ons"
           [checked] = "formService.selectedOns().some(on => on.id === ons.id)"

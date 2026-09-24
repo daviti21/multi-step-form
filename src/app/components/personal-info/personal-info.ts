@@ -14,4 +14,12 @@ export class PersonalInfo {
     const input = event.target as HTMLInputElement;
     input.value = input.value.replace(/\D/g, '');
   }
+
+scrollToInput(event: FocusEvent){
+    const input = event.target as HTMLInputElement;
+    input.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    })
+}
  }

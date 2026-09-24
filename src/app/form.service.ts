@@ -99,7 +99,7 @@ export class FormService {
      this.monthly.set(false);
      this.currentStep.set(0);
 
-     localStorage.clear()
+     sessionStorage.clear()
    }
 
    saveData() {
@@ -109,11 +109,11 @@ export class FormService {
        selectedPlan: this.selectedPlan(),
        monthly: this.monthly(),
      }
-     localStorage.setItem('fullInfo', JSON.stringify(data))
+     sessionStorage.setItem('fullInfo', JSON.stringify(data))
    }
 
    loadData() {
-     const saved = localStorage.getItem('fullInfo');
+     const saved = sessionStorage.getItem('fullInfo');
      if (!saved) return
 
      const data = JSON.parse(saved);
