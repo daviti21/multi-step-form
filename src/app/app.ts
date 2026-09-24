@@ -16,5 +16,5 @@ import { FormService } from './form.service';
 export class App  {
     formService = inject(FormService);
   protected readonly title = signal('multi-step-form');
-ngOnInit() {}
-}
+
+  }

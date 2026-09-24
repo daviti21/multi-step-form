@@ -7,7 +7,7 @@
   @for (plan of formService.plans; track plan) {
     <label class="plan"
            [class.active]="formService.selectedPlan() === plan"
-           (click)="formService.selectedPlan.set(plan)"
+           (click)="formService.saveData();formService.selectedPlan.set(plan)"
     >
 
       <input type="radio" name="plan">
@@ -24,7 +24,7 @@
 
 <div class="change-box">
   <p class="month">Monthly</p>
-  <div class="button-box" [class.active]="!formService.monthly()" (click)="formService.changeMonthly()">
+  <div class="button-box" [class.active]="!formService.monthly()" (click)="changeMonthly(); formService.saveData()">
     <i class="fa-solid fa-circle" ></i>
   </div>
    <p class="year">Yearly</p>

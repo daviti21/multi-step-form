@@ -1,9 +1,9 @@
 <div class="container">
      @if (formService.currentStep() > 0) {
-       <button (click)="formService.prevStep()" class="back">Go Back</button>
+       <button (click)="prevStep()" class="back">Go Back</button>
      }
      @if (!formService.hideComplete()) {
-       <button (click)="formService.nextStep()" class="next" [disabled]="!formService.isStepValid()">Next Step</button>
+       <button (click)="nextStep()" class="next" [disabled]="!isStepValid()">Next Step</button>
 
      }
 

@@ -93,4 +93,7 @@ button{
     font-size: 0.93rem;
   }
 
+  .next:hover, .complete:hover{
+    opacity: 0.7;
+  }
 }

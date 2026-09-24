@@ -1,1 +1,34 @@
+<div class="container">
+  <p class="tit">Finishing up</p>
+  <p class="txt">
+    Double-check everything looks OK before confirming.
+  </p>
+  <div class="finish-cont">
+   <div class="inf-cont">
+     <div class="top">
+       <div class="left">
+         <p class="tit-cat">{{ formService.selectedPlan()?.tit }} ({{formService.monthly() ? 'Yearly' : 'Monthly'}})</p>
+         <a routerLink="/select-plan">Change</a>
+       </div>
+       <p class="cat-price">$ {{formService.selectedPrice()}}{{formService.monthly() ? '/yr' : '/mo'}}</p>
+     </div>
+     <hr>
+     @if(formService.selectedOns().length > 0) {
+     <div class="bottom">
+          @for (on of formService.selectedOns(); track on) {
+           <div class="on-box">
+             <p class="on-cat">{{on.name}}</p>
+             <p class="on-price">{{formService.monthly() ? '+$' + on.price.year + '/yr' : '+$' + on.price.month + '/mo'}}</p>
+           </div>
+         }
+
+     </div>
+     }
+   </div>
+    <div class="total-cont">
+      <p class="tot-txt">Total (per {{formService.monthly() ? 'year' : 'month'}})</p>
+      <p class="tot-price"> +${{totalPrice()}}{{ this.formService.monthly() ? '/year' : '/mo' }}</p>
+     </div>
+  </div>
+</div>
 

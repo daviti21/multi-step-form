@@ -1,0 +1,128 @@
+a{
+   color: #b2b3b8;
+ }
+
+a:visited {
+  color: #b2b3b8;
+}
+
+.tit, .cat-price{
+  color: #03295A;
+  font-weight: bold;
+}
+
+.txt, .tot-txt, .on-cat{
+  color: #b2b3b8;
+}
+
+.tit-cat{
+  color: #03295A;
+}
+
+.on-price{
+  color: rgb(3 41 90 / 0.89);
+}
+
+.tot-price{
+  color: #4438D6;
+  font-weight: bold;
+}
+
+.top, .total-cont, .on-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+.bottom{
+  background-color: #F5F6FB;
+  border-radius: 15px;
+}
+
+
+@media  screen and (max-width: 768px) {
+  .container{
+    padding: .5rem 1rem 1rem;
+  }
+
+  .tit {
+    font-size: 1.5rem;
+  }
+
+  .txt {
+    font-size: .9rem;
+    max-width: 30ch;
+  }
+
+  .tot-txt, .on-cat, .on-price{
+    font-size: .95rem;
+  }
+
+  .bottom{
+    padding: .3rem .6rem;
+  }
+
+  .tot-price{
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .tit {
+    font-size: 1.1rem;
+  }
+
+  .txt {
+    font-size: .87rem;
+    margin : -.4rem 0;
+   }
+
+  .tot-txt, .on-cat, .on-price{
+    font-size: .85rem;
+  }
+
+  .bottom{
+    padding: 0 .8rem;
+  }
+
+  .tot-price{
+    font-size: 1.05rem;
+  }
+
+  .tit-cat,  a{
+    font-size: .9rem;
+  }
+
+  .on-box{
+    height: 35px;
+  }
+
+}
+
+@media (min-width: 1024px){
+  .tit {
+    font-size: 1.8rem;
+  }
+
+  .txt {
+    font-size: .95rem;
+    margin-top: -.5rem;
+  }
+
+  .on-price, .on-cat{
+    font-size: .92rem;
+  }
+
+  .bottom{
+    padding: .5rem 1rem;
+  }
+
+  .tot-price{
+    font-size: 1.3rem;
+  }
+
+  a:hover{
+    color: #6259FF;
+  }
+}

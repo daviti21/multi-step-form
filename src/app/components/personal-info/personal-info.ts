@@ -10,15 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class PersonalInfo {
   formService = inject(FormService);
-  test(event: Event) {
-    console.log(
-      'INPUT:',
-      (event.target as HTMLInputElement).value
-    );
-
-    console.log(
-      'FORM:',
-      this.formService.form.value
-    );
+  onPhoneInput(event: Event) {
+    const input = event.target as HTMLInputElement;
+    input.value = input.value.replace(/\D/g, '');
   }
  }

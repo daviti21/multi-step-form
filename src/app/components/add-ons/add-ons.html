@@ -4,13 +4,12 @@
    <div class="input-box">
      @for (ons of formService.addons; track ons) {
        <label class="ons"
-       [class.active] = "formService.selectedOns().some(on => on.id === ons.id)"
-        (click)="formService.toggleAddOn(ons)"
-        >
+       [class.active] = "formService.selectedOns().some(on => on.id === ons.id)";
+          >
          <input type="checkbox" name="ons"
           [checked] = "formService.selectedOns().some(on => on.id === ons.id)"
-           (change)="formService.toggleAddOn(ons)"
-         >
+           (change)="toggleAddOn(ons)"
+          >
          <div class="inf-box">
            <p class='tit-on'>{{ons.name}}</p>
            <p class="des">{{ons.description}}</p>

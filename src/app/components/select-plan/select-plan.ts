@@ -6,7 +6,11 @@ import { FormService } from '../../form.service';
   selector: 'app-select-plan',
   styleUrl: './select-plan.css',
   templateUrl: './select-plan.html',
+  standalone: true,
 })
 export class SelectPlan {
+  changeMonthly() {
+    this.formService.monthly.update(v => !v)
+  }
   formService = inject(FormService);
 }

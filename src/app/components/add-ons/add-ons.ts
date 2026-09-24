@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
  import { FormService } from '../../form.service';
+import { AddOn } from '../../add-ons.interface';
 
 @Component({
   imports: [ ],
@@ -9,4 +10,14 @@ import { Component, inject } from '@angular/core';
 })
 export class AddOns {
   formService = inject(FormService);
+
+  toggleAddOn(addOn: AddOn) {
+    this.formService.selectedOns.update(selected => {
+      const exists = selected.some(on => on.id === addOn.id);
+      if (exists) {
+        return selected.filter(on => on.id !== addOn.id)
+      }
+
+      return [...selected, addOn]
+    })}
 }

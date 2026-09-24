@@ -62,8 +62,10 @@
           <input
            id="phone"
            type="tel"
+           maxlength="13"
            formControlName="phone"
            placeholder="e.g. +995 555 12 34 56"
+           (input)="onPhoneInput($event)"
            [class.error-input]="formService.form.get('phone')?.touched && formService.form.get('phone')?.invalid"
          >
        </div>
