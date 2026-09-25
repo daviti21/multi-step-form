@@ -45,7 +45,8 @@
            formControlName="email"
            placeholder="e.g. stephenking@lorem.com"
            [class.error-input]="formService.form.get('email')?.touched && formService.form.get('email')?.invalid"
-           (focus)="scrollToInput($event)"
+           (focus)="onFocus($event)"
+           (blur)="onBlur()"
           >
        </div>
 
@@ -68,7 +69,8 @@
            placeholder="e.g. +995 555 12 34 56"
            (input)="onPhoneInput($event)"
            [class.error-input]="formService.form.get('phone')?.touched && formService.form.get('phone')?.invalid"
-           (focus)="scrollToInput($event)"
+           (focus)="onFocus($event)"
+           (blur)="onBlur()"
          >
        </div>
      </div>

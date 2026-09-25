@@ -16,7 +16,7 @@ export class FormService {
    monthly = signal(false);
    selectedOns = signal<AddOn[]>([]);
    selectedPlan = signal<Plan | null>(null);
-
+   inFocus = signal(false);
    constructor() {
     this.loadData()
     this.form.valueChanges.subscribe(() => {

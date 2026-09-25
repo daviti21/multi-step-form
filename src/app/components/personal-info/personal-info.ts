@@ -14,12 +14,28 @@ export class PersonalInfo {
     const input = event.target as HTMLInputElement;
     input.value = input.value.replace(/\D/g, '');
   }
+  onFocus(event: FocusEvent) {
+    this.formService.inFocus.set(true);
 
-scrollToInput(event: FocusEvent){
-    const input = event.target as HTMLInputElement;
-    input.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-    })
-}
+    setTimeout(() => {
+      const input = event.target as HTMLElement;
+      const viewport = window.visualViewport;
+
+      if (!viewport) return;
+
+      const inputBottom = input.getBoundingClientRect().bottom;
+      const visibleHeight = viewport.height;
+
+      if (inputBottom > visibleHeight) {
+        window.scrollBy({
+          top: inputBottom - visibleHeight + 20,
+          behavior: 'smooth'
+        });
+      }
+    }, 300);
+  }
+
+  onBlur() {
+    this.formService.inFocus.set(false);
+  }
  }
