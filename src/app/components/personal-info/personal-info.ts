@@ -14,24 +14,19 @@ export class PersonalInfo {
     const input = event.target as HTMLInputElement;
     input.value = input.value.replace(/\D/g, '');
   }
+
   onFocus(event: FocusEvent) {
     this.formService.inFocus.set(true);
 
     setTimeout(() => {
       const input = event.target as HTMLElement;
-      const viewport = window.visualViewport;
 
-      if (!viewport) return;
+      const top = input.getBoundingClientRect().top + window.scrollY;
 
-      const inputBottom = input.getBoundingClientRect().bottom;
-      const visibleHeight = viewport.height;
-
-      if (inputBottom > visibleHeight) {
-        window.scrollBy({
-          top: inputBottom - visibleHeight + 20,
-          behavior: 'smooth'
-        });
-      }
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
     }, 300);
   }
 

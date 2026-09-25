@@ -10,7 +10,7 @@
   .container {
     width: 100%;
     max-width: 480px;
-    min-height: 100vh;
+    min-height: 100dvh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -18,12 +18,16 @@
   }
 
   .inf-box {
-    flex: 1;
+    width: 100%;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    width: 100%;
     position: relative;
+  }
+
+  .content.inFocus {
+    min-height: 102vh;
   }
 
   .content {
@@ -31,30 +35,24 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .page-box {
-    position: absolute;
-    width: 92%;
-    background-color: white;
-    left: 4%;
-    top: 100px;
-    border-radius: 10px;
-  }
-
-  app-navigation-buttons {
-    margin-top: auto;
-    padding-bottom: env(safe-area-inset-bottom);
+    min-height: 0;
   }
 
   .form-content {
+    width: 90%;
     margin: -5rem auto 0;
     border-radius: 10px;
-    width: 90%;
+    background-color: white;
+    height: auto;
+    flex: none;
   }
 
-
+  app-navigation-buttons {
+    width: 100%;
+    margin: auto auto 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    flex-shrink: 0;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -89,9 +87,12 @@
   app-sidebar {
     flex: 1;
   }
-  .form-content, app-navigation-buttons {
+
+  .form-content,
+  app-navigation-buttons {
     width: 90%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -128,11 +129,11 @@
   }
 
   app-sidebar {
-    flex: .9;
+    flex: 0.9;
     margin-top: auto;
   }
 
-  .form-content{
+  .form-content {
     width: 70%;
     margin: auto;
   }
@@ -144,7 +145,7 @@
     min-height: 500px;
   }
 
-  .form-content{
+  .form-content {
     width: 80%;
   }
 }
